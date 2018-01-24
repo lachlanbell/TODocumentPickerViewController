@@ -189,7 +189,7 @@
     [self.loadingView startAnimating];
 
     /* Set-up the Edit/Cancel buttons */
-    self.selectButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Select", nil) style:UIBarButtonItemStylePlain target:self action:@selector(selectButtonTapped)];
+//    self.selectButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Select", nil) style:UIBarButtonItemStylePlain target:self action:@selector(selectButtonTapped)];
     self.cancelButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", nil) style:UIBarButtonItemStyleDone target:self action:@selector(selectButtonTapped)];
     self.navigationItem.rightBarButtonItem = self.selectButton;
 
@@ -211,52 +211,52 @@
         return;
     }
 
-    // Unhide the navigation controller's toolbar
-    if (self.navigationController.toolbarHidden) {
-        self.navigationController.toolbarHidden = NO;
-    }
-
-    /* Toolbar files/folders count label */
-    if (self.toolBarLabel == nil) {
-        self.toolBarLabel = [[UILabel alloc] initWithFrame:(CGRect){0,0,215,44}];
-        self.toolBarLabel.font = [UIFont systemFontOfSize:12.0f];
-        self.toolBarLabel.textColor = self.navigationController.navigationBar.titleTextAttributes[NSForegroundColorAttributeName];
-        self.toolBarLabel.textAlignment = NSTextAlignmentCenter;
-        self.toolBarLabel.text = NSLocalizedString(@"Loading...", nil);
-    }
-
-    UIBarButtonItem *spaceItemLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *spaceItemRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *labelItem = [[UIBarButtonItem alloc] initWithCustomView:self.toolBarLabel];
-
-    /* Toolbar button elements */
-    if (self.nonEditingToolbarItems == nil) {
-        if (self.doneButton == nil) {
-            self.doneButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", nil)
-                                                               style:UIBarButtonItemStyleDone
-                                                              target:self
-                                                              action:@selector(doneButtonTapped)];
-        }
-
-        self.nonEditingToolbarItems = @[self.doneButton, spaceItemLeft, labelItem, spaceItemRight];
-    }
-
-    /* Set up editing buttons */
-    if (self.editingToolbarItems == nil) {
-        if (self.chooseButton == nil) {
-            self.chooseButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Choose", @"")
-                                                                 style:UIBarButtonItemStyleDone
-                                                                target:self
-                                                                action:@selector(chooseButtonTapped)];
-        }
-
-        UIBarButtonItem *actionItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:nil action:nil];
-        actionItem.enabled = NO;
-
-        self.editingToolbarItems = @[actionItem, spaceItemLeft, labelItem, spaceItemRight, self.chooseButton];
-    }
-
-    [self updateToolbarItems];
+//    // Unhide the navigation controller's toolbar
+//    if (self.navigationController.toolbarHidden) {
+//        self.navigationController.toolbarHidden = NO;
+//    }
+//
+//    /* Toolbar files/folders count label */
+//    if (self.toolBarLabel == nil) {
+//        self.toolBarLabel = [[UILabel alloc] initWithFrame:(CGRect){0,0,215,44}];
+//        self.toolBarLabel.font = [UIFont systemFontOfSize:12.0f];
+//        self.toolBarLabel.textColor = self.navigationController.navigationBar.titleTextAttributes[NSForegroundColorAttributeName];
+//        self.toolBarLabel.textAlignment = NSTextAlignmentCenter;
+//        self.toolBarLabel.text = NSLocalizedString(@"Loading...", nil);
+//    }
+//
+//    UIBarButtonItem *spaceItemLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+//    UIBarButtonItem *spaceItemRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+//    UIBarButtonItem *labelItem = [[UIBarButtonItem alloc] initWithCustomView:self.toolBarLabel];
+//
+//    /* Toolbar button elements */
+//    if (self.nonEditingToolbarItems == nil) {
+//        if (self.doneButton == nil) {
+//            self.doneButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", nil)
+//                                                               style:UIBarButtonItemStyleDone
+//                                                              target:self
+//                                                              action:@selector(doneButtonTapped)];
+//        }
+//
+//        self.nonEditingToolbarItems = @[self.doneButton, spaceItemLeft, labelItem, spaceItemRight];
+//    }
+//
+//    /* Set up editing buttons */
+//    if (self.editingToolbarItems == nil) {
+//        if (self.chooseButton == nil) {
+//            self.chooseButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Choose", @"")
+//                                                                 style:UIBarButtonItemStyleDone
+//                                                                target:self
+//                                                                action:@selector(chooseButtonTapped)];
+//        }
+//
+//        UIBarButtonItem *actionItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:nil action:nil];
+//        actionItem.enabled = NO;
+//
+//        self.editingToolbarItems = @[actionItem, spaceItemLeft, labelItem, spaceItemRight, self.chooseButton];
+//    }
+//
+//    [self updateToolbarItems];
 }
 
 - (void)viewWillAppear:(BOOL)animated
