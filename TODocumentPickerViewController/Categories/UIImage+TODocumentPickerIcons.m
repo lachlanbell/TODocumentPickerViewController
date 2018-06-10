@@ -302,7 +302,11 @@
             
             //// Text Drawing
             if (formatNameString.length > 0) {
-                CGRect textRect = CGRectMake(CGRectGetMinX(fileIcon) + floor(fileIcon.size.width * 0.02469 - 0.39) + 0.89, CGRectGetMinY(fileIcon) + floor(fileIcon.size.height * 0.30244 - 0.02) + 0.52, floor(fileIcon.size.width * 0.98190 + 0.15) - floor(fileIcon.size.width * 0.02469 - 0.39) - 0.54, floor(fileIcon.size.height * 0.69823 - 0.02) - floor(fileIcon.size.height * 0.30244 - 0.02));
+                CGRect textRect = CGRectMake(
+											 CGRectGetMinX(fileIcon) + floor(fileIcon.size.width * 0.02469 - 0.39) + 0.89,
+											 CGRectGetMinY(fileIcon) + floor(fileIcon.size.height * 0.30244 - 0.02) + 0.52,
+											 floor(fileIcon.size.width * 0.98190 + 0.15) - floor(fileIcon.size.width * 0.02469 - 0.39) - 0.54,
+											 floor(fileIcon.size.height * 0.69823 - 0.02) - floor(fileIcon.size.height * 0.30244 - 0.02) + 10);
                 
                 NSString* textContent = formatNameString;
                 NSMutableParagraphStyle* textStyle = [[NSMutableParagraphStyle alloc] init];

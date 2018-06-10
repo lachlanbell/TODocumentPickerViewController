@@ -57,11 +57,13 @@
         item.lastModifiedDate = attributes.fileModificationDate;
         [items addObject:item];
     }
-    
+	
+	completionHandler(items);
+	
     //Perform after a 1 second delay to simulate a web request
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        completionHandler(items);
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        completionHandler(items);
+//    });
 }
 
 #pragma mark - Class Setup / Management -
@@ -97,7 +99,7 @@
     }
 
     NSArray *textFiles = @[@"DesignPlan.txt",
-                           @"HelloWorld.txt",
+                           @"HelloWorld.abcdef",
                            @"Blog Posts.txt",
                            @"Test Document.txt",
                            @"Upcoming Projects.txt"
