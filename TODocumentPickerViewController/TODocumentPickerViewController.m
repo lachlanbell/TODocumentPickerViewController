@@ -190,11 +190,11 @@
 
     /* Set-up the Edit/Cancel buttons */
 //    self.selectButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Select", nil) style:UIBarButtonItemStylePlain target:self action:@selector(selectButtonTapped)];
-    self.cancelButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", nil) style:UIBarButtonItemStyleDone target:self action:@selector(selectButtonTapped)];
-    self.navigationItem.rightBarButtonItem = self.selectButton;
+//    self.cancelButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", nil) style:UIBarButtonItemStyleDone target:self action:@selector(selectButtonTapped)];
+//    self.navigationItem.rightBarButtonItem = self.selectButton;
 
     /* Set-up Select All button */
-    self.selectAllButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Select All", @"") style:UIBarButtonItemStylePlain target:self action:@selector(selectAllButtonTapped)];
+//    self.selectAllButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Select All", @"") style:UIBarButtonItemStylePlain target:self action:@selector(selectAllButtonTapped)];
 
     /* Set-up the toolbar */
     [self configureToolbar];
@@ -204,9 +204,9 @@
 {
     // If another controller is controlling the toolbar, defer to them
     if (self.configuration.showToolbar == NO) {
-        self.toolBarLabel = nil;
-        self.doneButton = nil;
-        self.chooseButton = nil;
+//        self.toolBarLabel = nil;
+//        self.doneButton = nil;
+//        self.chooseButton = nil;
 
         return;
     }
@@ -453,16 +453,16 @@
 
 - (void)updateBarButtonsAnimated:(BOOL)animated
 {
-    //Swap the 'Select/Cancel' buttons
-    [self.navigationItem setRightBarButtonItem:(self.editing ? self.cancelButton : self.selectButton) animated:animated];
-
-    //Hide 'back' if it was visible
-    if (self.navigationController.viewControllers.count > 1) {
-        [self.navigationItem setHidesBackButton:self.editing animated:animated];
-    }
-
-    //Add the 'Select All' button in place of the 'Back' button
-    [self.navigationItem setLeftBarButtonItems:self.editing ? @[self.selectAllButton] : nil animated:animated];
+//    //Swap the 'Select/Cancel' buttons
+//    [self.navigationItem setRightBarButtonItem:(self.editing ? self.cancelButton : self.selectButton) animated:animated];
+//
+//    //Hide 'back' if it was visible
+//    if (self.navigationController.viewControllers.count > 1) {
+//        [self.navigationItem setHidesBackButton:self.editing animated:animated];
+//    }
+//
+//    //Add the 'Select All' button in place of the 'Back' button
+//    [self.navigationItem setLeftBarButtonItems:self.editing ? @[self.selectAllButton] : nil animated:animated];
 }
 
 - (void)selectAllButtonTapped
@@ -494,7 +494,7 @@
 
 - (void)doneButtonTapped
 {
-    [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)chooseButtonTapped
